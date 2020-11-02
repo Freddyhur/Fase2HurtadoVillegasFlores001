@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="col-lg-12">
+        <div class="jumbotron jumbotron-fluid text-center mt-5">
+            <div class="container">
+                
+                <div class="jumbotron bg-success"><h1 class="display-1" id="ngame">{{ juego.titulo }}</h1>
+                <p class="display" style="color: beige;">Creado por: {{ juego.autor }} </p></div>
+                
+                <div class="card text-center" style="background-color:  #cfcfd1 ;">
+                    
+                    <div class="card-body">
+                      <img src="https://www.denofgeek.com/wp-content/uploads/2015/02/kirby-and-the-rainbow-curse-e3-2014-02-1280x846-1.jpg?fit=620%2C410" height="400" alt="Minijuego" >
+                      <hr>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus blanditiis delectus, doloremque numquam fugiat assumenda perspiciatis asperiores aliquid, vero aperiam nihil quia, quidem enim veritatis cupiditate mollitia consectetur dolore aliquam! (Descripción del minijuego)</p>                          
+                    </div>
+                    <div class="card-footer text-muted">                            
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-2">
+                                    <p style="font-size: x-large;">Rate:</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <img src="{% static 'img/moon.png' %}" style="height: 32px; width: 30px;"> 
+                                </div>
+                                <div class="col-md-1">
+                                    <img src="{% static 'img/moon.png' %}" style="height: 32px; width: 30px;"> 
+                                </div>  
+                                <div class="col-md-1">
+                                    <img src="{% static 'img/moon.png' %}" style="height: 32px; width: 30px;"> 
+                                </div>  
+                                <div class="col-md-1">
+                                    <img src="{% static 'img/moon.png' %}" style="height: 32px; width: 30px;"> 
+                                </div>  
+                                <div class="col-md-1">
+                                    <img src="{% static 'img/moon.png' %}" style="height: 32px; width: 30px;"> 
+                                </div>                                                                  
+                            </div>                                
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="jumbotron   mt-5">
+            <div class="container">
+                <div class="card">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Descripcion </h5>
+                        <li>{{ juego.descripcion }}</li>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <hr>
+{% endblock %}
