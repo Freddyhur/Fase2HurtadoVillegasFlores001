@@ -2,14 +2,14 @@
 
 {% block content %}
   <br>
-  <div class="container" style="background-color:  rgb(255, 242, 122);">
+  <div class="container" style="background-color: rgb(197, 190, 123);">
     <div >
-    <div style="background-color: rgb(214, 124, 124);"><h1>USER LIST</h1></div>
+    <div class="jumbotron " style="background-color: rgb(214, 124, 124);"><h1>USER LIST</h1>
     <hr>
 
     {% if autor_list %}
     <ul>
-      <div class="card-title" style="background-color: rgb(255, 242, 122);">
+      <div class="jumbotron" style="background-color: rgb(255, 242, 122);">
       {% for autor in autor_list %}
       <li>
         <a href="{{ autor.get_absolute_url }}" >{{ autor.nombre }}</a> 
@@ -18,7 +18,7 @@
     </div>
     </ul>
   </div>
-  </div>
+  </div></div>
     {% else %}
       <p>There are no autors in the library.</p>
     {% endif %}  
