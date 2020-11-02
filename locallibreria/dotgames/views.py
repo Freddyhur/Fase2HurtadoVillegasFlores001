@@ -13,3 +13,24 @@ class JuegoListView(generic.ListView):
     paginate_by = 10
 class JuegoDetailView(generic.DetailView):
     model = Juego
+
+class AutorCreate(CreateView):
+    model = Autor
+    fields = '__all__'
+    initial ={'nombre': ''}
+
+class AutorUpdate(UpdateView):
+    model = Autor
+    fields = ['nombre']
+
+class AutorDelete(DeleteView):
+    model = Autor
+    success_url = reverse_lazy('autor')
+
+
+class AutorDetailView(generic.DetailView):
+    model=Autor
+
+class AutorListView(generic.ListView):
+    model = Autor
+    paginate_by = 10

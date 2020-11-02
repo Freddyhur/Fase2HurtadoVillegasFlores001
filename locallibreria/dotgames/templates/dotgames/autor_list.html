@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <br>
+  <div class="container" style="background-color:  rgb(255, 242, 122);">
+    <div >
+    <div style="background-color: rgb(214, 124, 124);"><h1>USER LIST</h1></div>
+    <hr>
+
+    {% if autor_list %}
+    <ul>
+      <div class="card-title" style="background-color: rgb(255, 242, 122);">
+      {% for autor in autor_list %}
+      <li>
+        <a href="{{ autor.get_absolute_url }}" >{{ autor.nombre }}</a> 
+      </li>
+      {% endfor %}
+    </div>
+    </ul>
+  </div>
+  </div>
+    {% else %}
+      <p>There are no autors in the library.</p>
+    {% endif %}  
+  <br>     
+{% endblock %}
