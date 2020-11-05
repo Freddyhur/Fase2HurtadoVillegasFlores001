@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
   <br>
@@ -12,7 +13,16 @@
       <div class="jumbotron" style="background-color: rgb(255, 242, 122);">
       {% for autor in autor_list %}
       <li>
-        <a href="{{ autor.get_absolute_url }}" >{{ autor.nombre }}</a> 
+        <hr>
+        <div class="row">
+          <div class="col-2">
+            <a href="{{ autor.get_absolute_url }}"><img src="{% static 'img/no.png' %}" width="100" height="130" class="card-img-top"></a>            
+          </div>
+          <div class="col-10">
+            <a href="{{ autor.get_absolute_url }} " style="text-decoration: none; color: green; font-size: xx-large;" >{{ autor.nombre }}</a> 
+          </div>
+        </div>        
+        <hr>
       </li>
       {% endfor %}
     </div>
