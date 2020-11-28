@@ -55,10 +55,16 @@
                 
             </div>
 
-            <ul class="nav navbar-nav flex-row justify-content-end flex-nowrap">
-                <a href="">Login/</a>
-                <a href="">Singup</a>
-            </ul>
+            {% if user.is_authenticated %}
+                <h3>Hola! {{user.username}}</h3>
+            {% else %}
+                <p>El usuario no esta logueado</p>
+                <ul class="nav navbar-nav flex-row justify-content-end flex-nowrap">
+                    <a href="{% url 'login' %}">Login/</a>
+                    <a href="{% url 'registro' %}">Singup</a>
+                </ul>
+            {% endif %}
+            
         </div>
     </div>
 </nav>
