@@ -54,7 +54,44 @@ este sitio es darse a conocer a diferentes aficionados del medio
 </div>
 <br><br>
     
-{% include 'juego_list.html' %}
+<!-- Replicación ded juego_list-->
+<hr>
+<div class="container">
+    <div class="jumbotron bg-body">
+    <hr>
+    <div class="jumbotron bg-info"><h1 class="text-center">GAMES LIST</h1></div>
+    <hr>
+    {% if juego_list %}
+    <ul>
+
+      {% for juego in juego_list %}
+      <div class="card-columns">
+        <div class="card-title"><h4><a href="{{ juego.get_absolute_url }}" style="text-decoration: none; color: black;"><h4 class="text-center">{{juego.titulo}}</h4></a></h4></div>
+      </div>
+      
+      <div class="row mb-5">
+        <div class="col-lg-4 rounded bg-warning "> <!--sección con la imágen del juego-->
+          <div class="card-img"><a href="{{ juego.get_absolute_url }}"><img src="{% static 'img/no.png' %}" height="200" class="card-img-top"></a></div>
+        </div>
+
+        <div class="col-lg-8 "> <!--sección con la descripción del juego-->
+          <div>
+            <p>Descripción:</p>
+            <p> {{juego.descripcion}} </p>
+          </div>
+        </div>
+      </div>
+      
+      {% endfor %}
+      
+    </ul>
+       
+    {% else %}
+      <p>There are no games in the library.</p>
+    {% endif %}   
+
+  </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

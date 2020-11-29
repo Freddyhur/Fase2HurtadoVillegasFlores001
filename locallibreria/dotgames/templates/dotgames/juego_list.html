@@ -13,13 +13,19 @@
     <ul>
 
       {% for juego in juego_list %}
-      <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6 rounded bg-warning mt-5">
-          <div class="card"><a href="{{ juego.get_absolute_url }}"><img src="{% static 'img/no.png' %}" width="200" height="300" class="card-img-top"></a>
-          <div class="card-body">
-            <h4 class="card-title"><a href="{{ juego.get_absolute_url }}" style="text-decoration: none; color: black;"><h4 class="text-center">{{juego.titulo}}</h4></a></h4>
-            </div>
+      <div class="card-columns">
+        <div class="card-title"><h4><a href="{{ juego.get_absolute_url }}" style="text-decoration: none; color: black;"><h4 class="text-center">{{juego.titulo}}</h4></a></h4></div>
+      </div>
+      
+      <div class="row mb-5">
+        <div class="col-lg-4 rounded bg-warning "> <!--sección con la imágen del juego-->
+          <div class="card-img"><a href="{{ juego.get_absolute_url }}"><img src="{% static 'img/no.png' %}" height="200" class="card-img-top"></a></div>
+        </div>
+
+        <div class="col-lg-8 "> <!--sección con la descripción del juego-->
+          <div>
+            <p>Descripción:</p>
+            <p> {{juego.descripcion}} </p>
           </div>
         </div>
       </div>
